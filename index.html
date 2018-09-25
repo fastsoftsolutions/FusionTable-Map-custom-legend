@@ -75,6 +75,42 @@
         background:#9fc5e8;
       }
       
+ .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }      
+      
       
     </style>
 
@@ -106,12 +142,22 @@
         var legend = document.createElement('div');
         legend.id = 'legend';
         var content = [];
-        content.push('<h3>Company</h3>');
-        content.push('<p><div class="color green"></div>The Fresh Market</p>');
-        content.push('<p><div class="color blue"></div>Whole Foods Market</p>');
-        content.push('<p><div class="color yellow"></div>Sprouts Farmers Market</p>');
-        content.push('<p>*Only US locations</p>');
-        content.push('<p><a href="https://www.google.com/fusiontables/DataSource?docid=1RXgs33--EUO1ARJsNr0VQwju9TyebQpkuBlbxmlF">Source Data</a>');
+        content.push('<h3>Cost based on County/Municipality</h3>');
+        content.push("<div class='my-legend'>")
+        content.push("<div class='legend-title'>Cost based on County/Municipality</div>")
+        content.push("<div class='legend-scale'>");
+        content.push("<ul class='legend-labels'>")
+        content.push("<li><span class = 'fistcolor'></span>0 - 300</li>");
+        content.push("<li><span class = 'secondcolor'></span>301 - 500</li>");
+        content.push("<li><span class = 'thirdcolor'></span>501 - 700</li>");
+        content.push("<li><span class = 'fourthcolor'></span>701 - 2,000</li>");
+        content.push("<li><span class = 'fiftholor'></span>2,001 - 5,000</li>");
+        content.push("<li><span class = 'sixthcolor'></span>5,001 - 10,000</li>");
+        content.push("<li><span class = 'seventcolor'></span>10,001 - 20,000</li>");
+        content.push("<li><span class = 'eigthcolor'></span>20,001 - 30,000</li>");
+        content.push("</ul>")
+        content.push("</div>")
+        content.push("</div>");
         legend.innerHTML = content.join('');
         legend.index = 1;
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
