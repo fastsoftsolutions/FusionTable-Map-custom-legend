@@ -132,13 +132,26 @@
         var layer = new google.maps.FusionTablesLayer({
           map: map,
           query: {
-            select: 'col14',
+            select: 'geometry',
             from: '1csJ4KiOaquOxkpZK73zUbMN_aC1YHoNCi_PgGdFS',
           },
-          options:{
-            styleId: 5,
-            templateId: 6
-          }
+          styles: [{
+             polygonOptions: {
+                fillColor: '#00FF00',
+                fillOpacity: 0.7
+             }      
+             },{
+                where: 'VALUE > -1 && VALUE < 301',
+                polygonOptions: {
+                   fillColor: '#f9cb9c;'
+                }
+            }, {
+                where: 'VALUE > 300 && VALUE < 501',
+                polygonOptions: {
+                  fillColor: '#f9cb9c;'
+                }
+            }            
+          }]   
         });
         // MODIFY Title and text of your legend. Match color names and labels to the Google Fusion Table map marker icons you already created.
         // To display link to source data, insert the URL of your Google Fusion Table.
