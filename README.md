@@ -1,4 +1,4 @@
 Choropleth map to show the cost for each municipality and county
 
 <br>
-<a href = "https://github.com/fastsoftsolutions/FusionTable-Map-custom-legend/blob/master/index.html">Link to the interface</a>
+<a href = "https://cdn.rawgit.com/fastsoftsolutions/FusionTable-Map-custom-legend/93083ace/index.html">Link to the interface</a>
