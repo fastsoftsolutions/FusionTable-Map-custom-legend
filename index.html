@@ -68,11 +68,14 @@
       .sixthrange{
         background:#ffff00;
       }
-      .seventrange{
+      .seventhrange{
         background:#00ff00;
       }
-      .eighthrange{
+      .eigthrange{
         background:#9fc5e8;
+      }
+      .ninethrange{
+        background:#274e13;
       }
       
  .my-legend .legend-title {
@@ -129,7 +132,7 @@
         var layer = new google.maps.FusionTablesLayer({
           map: map,
           query: {
-            select: 'Address',
+            select: 'geometry',
             from: '1csJ4KiOaquOxkpZK73zUbMN_aC1YHoNCi_PgGdFS',
           },
           options:{
@@ -154,12 +157,13 @@
         content.push("<li><span class = 'sixthrange'></span>5,001 - 10,000</li>");
         content.push("<li><span class = 'seventhrange'></span>10,001 - 20,000</li>");
         content.push("<li><span class = 'eigthrange'></span>20,001 - 30,000</li>");
+        content.push("<li><span class = 'ninethrange'></span>30,001 - 10,00,000</li>");
         content.push("</ul>")
         content.push("</div>")
         content.push("</div>");
         legend.innerHTML = content.join('');
         legend.index = 1;
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
